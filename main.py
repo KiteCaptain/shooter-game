@@ -17,7 +17,7 @@ mixer.music.load('background.wav')
 mixer.music.play(-1)
 
 #title and icon
-pygame.display.set_caption("space invaders")
+pygame.display.set_caption("Kite Captain Space Shooter")
 icon = pygame.image.load('startup.png')
 pygame.display.set_icon(icon)
 
@@ -53,7 +53,7 @@ bullet_state = "ready"
 
 #score
 score_val = 0
-font = pygame.font.Font('freesansbold.ttf',15)
+font = pygame.font.Font('freesansbold.ttf',20)
 textX = 10
 textY = 10
 
@@ -103,7 +103,11 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 playerX_change = -5
+            if event.key == K_a:
+                playerX_change = -5
             if event.key == pygame.K_RIGHT:
+                playerX_change = 5
+            if event.key == pygame.K_d:
                 playerX_change = 5
             if event.key == pygame.K_SPACE:
                 if bullet_state == "ready":
